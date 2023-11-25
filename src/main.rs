@@ -1,10 +1,11 @@
-
+mod application;
 mod commandline;
 
 use std::env;
 use std::process::ExitCode;
 
 use commandline::{print_help, print_unknown};
+use application::run_application;
 
 fn main() -> ExitCode {
     let args: Vec<String> = env::args().collect();
@@ -25,10 +26,7 @@ fn main() -> ExitCode {
                 }
             }
 
-            println!("Sudo user?: {}", is_root);
-
-            // run menu
-            // ...
+            return run_application(is_root);
         }
     }
 
