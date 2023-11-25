@@ -12,7 +12,19 @@ fn main() -> ExitCode {
 
         // normal program run
         None => {
+            // check for sudo privileges
+            let mut is_root: bool = false;
 
+            if let Some(user) = env::var_os("USER") {
+                if user == "root" {
+                    is_root = true;
+                }
+            }
+
+            println!("Sudo user?: {}", is_root);
+
+            // run menu
+            // ...
         }
     }
 
