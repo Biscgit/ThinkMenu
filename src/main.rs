@@ -1,13 +1,14 @@
-mod app;
-mod commandline;
+mod terminal;
 mod filesystem;
 
-use std::env;
+use tokio::io::Result;
 
-use commandline::{print_help, print_unknown};
-use app::run_application;
+#[tokio::main]
+async fn main() -> Result<()> {
+    Ok(())
+}
 
-fn main() {
+fn old_main() {
     let args: Vec<String> = env::args().collect();
 
     match args.get(1).map(String::as_str) {
