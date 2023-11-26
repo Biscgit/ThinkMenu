@@ -1,5 +1,5 @@
 use std::{io, fs};
-use std::io::{Read, Write};
+use std::io::Write;
 
 
 pub fn read_file(file_path: &str) -> io::Result<String> {
