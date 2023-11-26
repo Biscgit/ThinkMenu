@@ -7,7 +7,7 @@ use std::process::ExitCode;
 use commandline::{print_help, print_unknown};
 use app::run_application;
 
-fn main() -> ExitCode {
+fn main() {
     let args: Vec<String> = env::args().collect();
 
     match args.get(1).map(String::as_str) {
@@ -26,9 +26,8 @@ fn main() -> ExitCode {
                 }
             }
 
-            return run_application(is_root);
+            run_application(is_root)
+                .expect("Unhandled critical error encountered. Exiting...");
         }
     }
-
-    return ExitCode::from(0);
 }
