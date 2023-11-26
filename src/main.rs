@@ -1,8 +1,8 @@
 mod app;
 mod commandline;
+mod filesystem;
 
 use std::env;
-use std::process::ExitCode;
 
 use commandline::{print_help, print_unknown};
 use app::run_application;
