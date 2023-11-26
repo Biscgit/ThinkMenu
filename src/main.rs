@@ -1,11 +1,11 @@
-mod application;
+mod app;
 mod commandline;
 
 use std::env;
 use std::process::ExitCode;
 
 use commandline::{print_help, print_unknown};
-use application::run_application;
+use app::run_application;
 
 fn main() -> ExitCode {
     let args: Vec<String> = env::args().collect();
